@@ -1,11 +1,10 @@
 <template>
-  <!-- content -->
-  <div id="content">
-    <div class="content">
-      <div class="box maxheight">
-        <div class="inner">
-          <h3>Reservation:</h3>
-          <v-app id="inspre">
+  <div>
+    <div id="content">
+      <div class="content">
+        <div class="inner"><h3>Reservation:</h3></div>
+
+        <v-app id="inspre">
           <v-form>
             <v-container fluid class="reserve">
               <v-layout align-center justify-space-between row fill-height wrap>
@@ -103,66 +102,21 @@
             </v-container>
           </v-form>
         </v-app>
-        </div>
       </div>
       <div class="indent">
-        <h2>FiveStar is happy to welcome you!</h2>
-        <div class="container__section">
-          <div>
-            <img class="img-main" alt="" src="../assets/1page-img1.png" />
-          </div>
-          <div>
-            <p class="alt-top">
-              Come alone or bring your family with you, stay here for a night or
-              for weeks, stay here while on business trip or at some kind of
-              conference - either way our hotel is the best possible variant.
-            </p>
-            Feel free to contact us anytime in case you have any questions or
-            concerns.
-          </div>
-        </div>
-        <div class="container__section">
-          <div class="col__1">
-            <h3>Special Offers</h3>
-            <ul class="offers__list">
-              <li>
-                <i class="material-icons" style="font-size:6px;color:red"
-                  >fiber_manual_record</i
-                >FREE wide-screen TV
-              </li>
-              <li>
-                <i class="material-icons" style="font-size:6px;color:red"
-                  >fiber_manual_record</i
-                >50% Discount for Restaraunt service
-              </li>
-              <li>
-                <i class="material-icons" style="font-size:6px;color:red"
-                  >fiber_manual_record</i
-                >30% Discount for 3 days+ orders
-              </li>
-              <li>
-                <i class="material-icons" style="font-size:6px;color:red"
-                  >fiber_manual_record</i
-                >FREE drinks and beverages in rooms
-              </li>
-              <li>
-                <i class="material-icons" style="font-size:6px;color:red"
-                  >fiber_manual_record</i
-                >Exclusive souvenirs
-              </li>
-            </ul>
-            <div class="button center">
-              <span
-                ><span><a href="#">Order Now!</a></span></span
-              >
-            </div>
-          </div>
-          <div class="col__2">
-            <h3>Location</h3>
+        <h2>Our location</h2>
+        <div class="location">
+          <img
+            alt="mainFoto__hotel"
+            src="../assets/5page-img1.png"
+            class="foto__hotel"
+          />
+          <div class="location hotel">
             <p>
               We are located in the center of Prague surrounded by malls and
-              boutiques.
+              boutiques, restaurants and luxurious shops.
             </p>
+            <p>Please feel free to come visit us at the following adress:</p>
             <ul class="contacts__list">
               <li>Gazek st., 210</li>
               <li>1-800-412-4556</li>
@@ -170,16 +124,20 @@
             </ul>
           </div>
         </div>
+        <div id="mapid"><GoogleMap /></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import GoogleMap from "../components/GoogleMap.vue";
 
 export default {
   name: "Booking",
-  
+  components: {
+    GoogleMap
+  },
   data: () => ({
     date: new Date().toISOString().substr(0, 10),
     menu: false,
@@ -199,7 +157,6 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
 $breakpoint-small: 576px;
 $breakpoint-medium: 768px;
@@ -213,35 +170,30 @@ $breakpoint-medium: 768px;
     @content;
   }
 }
-
-.col__1 {
-  width: 50%;
-  display: block;
+.foto__hotel {
+  margin-right: 10px;
+  width: 160px;
+  height: 107px;
 }
 
-.offers__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  padding-bottom: 20px;
+.location {
+  display: flex;
+  @include small {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
-.material-icons {
-  padding-right: 10px;
+.hotel {
+  display: flex;
+  flex-direction: column;
 }
 
 .contacts__list {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-.img-main {
-  margin-left: 10px;
-  width: 166px;
-  height: 109px;
-  margin: 0;
+  margin-bottom: 20px;
 }
 
 #inspre {
@@ -256,16 +208,9 @@ $breakpoint-medium: 768px;
   }
 }
 
-.container__section {
-  @include small {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.reserve {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.center {
-  @include small {
-    margin-bottom: 20px;
-  }
-}
-</style>
+  </style>

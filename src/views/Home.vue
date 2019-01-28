@@ -96,7 +96,7 @@
                 </v-flex>
                 
               </v-layout>
-                            <v-flex xs12 sm1 md3>
+                            <v-flex xs12 sm1 md3 >
                   <v-btn large dark color="#a50000" to="/"
                     >Check Availability</v-btn
                   >

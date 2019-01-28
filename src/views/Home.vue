@@ -94,12 +94,13 @@
                     color="red"
                   ></v-text-field>
                 </v-flex>
-                <v-flex xs12 sm1 md3>
+                
+              </v-layout>
+                            <v-flex xs12 sm1 md3>
                   <v-btn large dark color="#a50000" to="/"
                     >Check Availability</v-btn
                   >
                 </v-flex>
-              </v-layout>
             </v-container>
           </v-form>
         </v-app>
@@ -201,7 +202,7 @@ export default {
 
 
 <style lang="scss" scoped>
-$breakpoint-small: 576px;
+$breakpoint-small: 600px;
 $breakpoint-medium: 768px;
 @mixin small {
   @media screen and (max-width: $breakpoint-small) {

@@ -1,15 +1,11 @@
 <template>
- 
-   <v-app dark id="wrapp">
-    <v-content transition="slide-x-transition" class="v-toolbar__content lpad">
+  <div>
     <MyHeader />
 
     <!-- отображаем тут компонент, для которого совпадает маршрут -->
     <router-view></router-view>
-    </v-content>
     <MyFooter />
-    </v-app>
-  
+  </div>
 </template>
 
 <script>
@@ -29,7 +25,7 @@ export default {
 
 
 <style lang="scss">
-$breakpoint-small: 600px;
+$breakpoint-small: 576px;
 $breakpoint-medium: 768px;
 @mixin small {
   @media screen and (max-width: $breakpoint-small) {
@@ -61,10 +57,6 @@ body {
   color: #bca695 !important;
   background: #37271c;
   //max-width: 976px;
-}
-#wrapp {
-  color: #bca695 !important;
-  background: #37271c;
 }
 h1,
 h2,
@@ -107,7 +99,6 @@ h3 {
   background-color: #2b1e15 !important;
   margin: 0 auto;
   padding: 20px;
-  width: 100%;
   max-width: 960px;
 }
 

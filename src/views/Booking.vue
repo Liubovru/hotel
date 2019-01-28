@@ -93,12 +93,13 @@
                     color="red"
                   ></v-text-field>
                 </v-flex>
-                <v-flex xs12 sm1 md3>
+               
+              </v-layout>
+                             <v-flex xs12 sm1 md3>
                   <v-btn large dark color="#a50000" to="/"
                     >Check Availability</v-btn
                   >
                 </v-flex>
-              </v-layout>
             </v-container>
           </v-form>
         </v-app>

@@ -1,64 +1,62 @@
 <template>
-  <!-- footer -->
-  <div id="footer">
-    <ul class="nav__footer">
-      <li class="footer__item"><a href="index.html"><router-link to="/"
-                        >Home</router-link></a></li>
-      <li class="footer__item"><a href="services.html"><router-link to="/Services">Services</router-link></a></li>
-      <li class="footer__item"><a href="gallery.html"><router-link to="/Gallery">Gallery</router-link></a></li>
-      <li class="footer__item"><a href="restaurant.html"><router-link to="/Restaurant">Restaurant</router-link></a></li>
-      <li class="footer__item"><a href="testimonials.html"><router-link to="/Testimonials">Testimonials</router-link></a></li>
-      <li class="footer__item"><a href="booking.html"><router-link to="/Booking">Booking</router-link></a></li>
-    </ul>
-    <div class="social">
-      <ul class="social__list">
-        <li class="social__item">
-            <a href="#" class="social__link">
-             <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-        <li class="social__item">
-            <a href="#" class="social__link">
-            <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link">
-            <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-      </ul>
-      <div class="fleft">Copyright (c) 2019 FiveStar Hotel</div>
-    </div>
-  </div>
-</template>
+ <div id="footer">
+  
+    <v-footer
+      dark
+      height="auto"
+    >
+      <v-card
+        color="#37271c"
+        flat
+        tile
+        width="100%"
+        class=" white--text text-xs-center"
+      >
+        <v-card-text> 
+          <v-btn
+            v-for="icon in icons"
+            :key="icon"
+            class="mx-3 white--text"
+            icon
+          >
+            <v-icon size="24px">{{ icon }}</v-icon>
+          </v-btn>
+        </v-card-text>
+  
+        <v-card-text class="white--text pt-0">
+          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. 
+        </v-card-text>
+  
+        <v-divider></v-divider>
+  
+        <v-card-text class="white--text">
+          Copyright&copy;2019 — <strong> FiveStar Hotel</strong>
+        </v-card-text>
+      </v-card>
+    </v-footer>
+ 
+</div>
+ </template>
+
 
 <script>
+
 export default {
   name: "MyFooter",
-data () {
+   data() {
     return {
-      menu: [
-        {  icon: "home", title: "Home", link: "/" },
-        { icon: "info", title: "Services", link: "/Services" },
-        { icon: "error", title: "Gallery", link: "/Gallery" },
-        { icon: "sucsess", title: "Restaurant", link: "/Restaurant" },
-        { icon: "crash", title: "Testimonials", link: "/Testimonials" },
-        { icon: "warning", title: "Booking", link: "/Booking" }
-      ]
-    }
-  },
-  
-  methods: {
-    menuItems () {
-      return this.menu
-    }
-  }
-} 
-
-</script>
-
-<style lang="scss">
+       icons: [
+      'fab fa-facebook',
+      'fab fa-twitter',
+      'fab fa-google-plus',
+      'fab fa-linkedin',
+      'fab fa-instagram'
+    ]
+    } 
+  }  
+};  
+</script> 
+ <style lang="scss">
 $breakpoint-small: 576px;
 $breakpoint-medium: 768px;
 @mixin small {
@@ -76,7 +74,7 @@ $breakpoint-medium: 768px;
 }
 #footer {
   font-family: Arial, Helvetica, sans-serif;
-  padding: 28px 40px 35px 40px;
+  width:100%;
   max-width: 950px;
   margin: 0 auto;
   @include small {
@@ -84,75 +82,7 @@ $breakpoint-medium: 768px;
   }
 }
 
-.nav__footer {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 20px;
-  @include small {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
 
-.nav__footer li a {
-  color: #e3dad2;
-}
 
-.footer__item {
-  border-right: 1px solid #a5a09d;
-  width: 100%;
-  text-align: center;
-  line-height: 1em;
-}
-
-.nav__footer :last-child {
-  border: none;
-}
-
-.social {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 40px 20px 40px;
-  @include small {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
-  }
-}
-.social__list {
-    display: flex;
-    //justify-content: center;
-    list-style: none;
-    padding-left: 0;
-    @include small {
-      display: flex;
-      margin-bottom: 10px;
-       align-items: center;
-    text-align: center;
-    }
-}
-
-.social__link  {
-    text-decoration: none;
-    display: block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    text-align: center;
-    margin-right: 10px;
-    font-weight: 700;
-    color: #fff;
-    background-color: #1d110b;
-    &:hover {
-    opacity: 0.7;
-    }
-}
-
-</style>
+</style>   
+ 
